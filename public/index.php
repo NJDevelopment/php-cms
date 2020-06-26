@@ -1,21 +1,16 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom CMS</title>
-</head>
+<?php include "../private/authenticate.php" ?>
+<?php include "head.php" ?>
 
 <body>
-    
-    <!-- connect to database -->
-    <?php include "../private/db_connection.php"; ?>
+    <div class="container">
+        <!-- navigation menu -->
+        <?php include "navigation.php" ?>
 
-    <!-- navigation menu -->
-    <?php include "navigation.php" ?>
+        <?php 
 
-    
-  
+        ?>
+    </div>
 </body>
 
 </html>
