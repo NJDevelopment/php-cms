@@ -16,10 +16,13 @@ if(isset($_POST["submit"])) {
         $email =  mysqli_real_escape_string($connection, $_POST['email']);
         $username =  mysqli_real_escape_string($connection, $_POST['username']);
         $password =  mysqli_real_escape_string($connection, $_POST['password']);
-    
-        $insertUser = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        //encrypt password and use it in sql statement
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        
+        $insertUser = "INSERT INTO users (email, username, password) VALUES ('$email', '$username', '$hashedPassword')";
         mysqli_query($connection, $insertUser);
-        header("Location: ../public/login.php");
+        echo "added successfully";
+        // header("Location: ../public/login.php");
     }
 }
 ?>
